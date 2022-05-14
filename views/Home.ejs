@@ -1,0 +1,29 @@
+<html>
+<%- include('./partials/head.ejs') %>
+
+    <body>
+        <%- include('./partials/nav.ejs') %>
+            <section class="desc">
+                <p>We are coffee punks who dont exaggerate about their Americanos. Time, temperature, and technique need to be on point to make the best cup of coffee, but its all for nothing without quality beans roasted to perfection. </p>
+            </section>
+            <h2 class="list-staff">Our staff</h2>
+            <section class="staffsection">
+                <% if (staff.length > 0) { %>
+                    <% staff.forEach(worker => { %>
+                        <div class="staff">
+                            <h3 class="staff-name">
+                                <%= worker.Name %>
+                            </h3>
+                            <h4 class="staff-age">
+                                <%= worker.Age %> year-old
+                            </h4>
+                        </div>
+                        <% }) %>
+                            <% } else { %>
+                                <h2> there is no workers yet</h2>
+                                <% } %>
+            </section>
+    </body>
+    <%- include('./partials/footer.ejs') %>
+
+</html>

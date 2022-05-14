@@ -1,0 +1,29 @@
+<html>
+<%- include('./partials/head.ejs') %>
+
+    <body>
+        <%- include('./partials/nav.ejs') %>
+            <section class="desc">
+                <p>Our menu changes on a monthly basis, to reflect the changing seasons, and to ensure that there is something new for you to enjoy each time you visit. Be sure to speak to one of us about the daily specials. If you have never visited Nadia
+                    Cafe before, you are in for a treat. We source the best coffee beans and freshest ingredients for a phenomenal eating and drinking experience. </p>
+            </section>
+            <section class="menusection">
+                <% if (product.length > 0) { %>
+                    <% product.forEach(product => { %>
+                        <div class="menu">
+                            <h3 class="menu-product">
+                                <%= product.product %>
+                            </h3>
+                            <h4 class="menu-price">
+                                <%= product.price %>
+                            </h4>
+                        </div>
+                        <% }) %>
+                            <% } else { %>
+                                <h2> there is no menu yet</h2>
+                                <% } %>
+            </section>
+    </body>
+    <%- include('./partials/footer.ejs') %>
+
+</html>
